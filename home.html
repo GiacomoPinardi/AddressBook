@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html id="tutto">
+	<head>
+		<title>Address Book</title>
+		<script type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<p id="titolo">ADDRESS BOOK</p>
+		<div id ="salvataggio">
+			<p class="istruzioni">Please fill the following field to create a new contact:</p>
+			<form>
+				<table>
+					<tr>
+						<td>First Name:</td> 
+						<td><input type="text" id="nome"></td>
+					</tr>
+					<tr>
+						<td>Second Name:</td>
+						<td><input type="text" id="cognome"></td>
+					</tr>
+					<tr>
+						<td>Mobile:</td>
+						<td><input type="text" id="cell"></td>
+					</tr>
+					<tr>
+						<td>E-Mail:</td>
+						<td><input type="text" id="mail"></td>
+					</tr>
+					<tr>
+						<td></td>						
+						<td><br><input id="btnInvia" type="button" value="Create" onclick="leggiInfo('nome','cognome','cell','mail')"/></td>
+					</tr>	
+				</table>
+			</form>
+		</div>
+		<div id="orizontalSeparator"></div>
+		<table id ="tblRicerca">			
+			<td>
+				<div id="ricercaIndice">
+					<p class="istruzioni">Search by index:</p>
+					<form>			
+						Index: <input type="text" id="index"><br>			
+						<br><input id="btnOttieni" type="button" value="Get" onclick="scriviInfo(document.getElementById('index').value)"/>	
+					</form>
+				</div>		
+			</td>
+			<td>
+				<div id="ricercaInformazione">
+					<p class="istruzioni">Search by information:</p>
+					<form>
+						<table>	
+							<tr>
+								<td>First Name</td>
+								<td><input id="radio1" type="radio" name="tipo" value="nome"/></td>
+							</tr>
+							<tr>
+								<td>Second Name</td>
+								<td><input id="radio2" type="radio" name="tipo" value="cognome"/></td>
+							</tr>
+							<tr>
+								<td>Mobile</td>
+								<td><input id="radio3" type="radio" name="tipo" value="cellulare"/></td>
+							</tr>
+							<tr>
+								<td>E-Mail</td>
+								<td><input id="radio4" type="radio" name="tipo" value="mail"/></td>
+							</tr>
+							<tr>
+								<td></rd>
+							</tr>
+							<tr>
+								<td>Info:</td>
+								<td><input type="text" id="data"></td>
+							</tr>
+							<tr>
+								<td><br></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input id="btnCerca" type="button" value="Search" onclick="cerca('data',0)"/></td>		
+							</tr>
+							<tr>
+								<td><br></td>
+							</tr>
+							<tr>								
+								<td><input id="btnPrevious" type="button" value="<< Previous" onclick="cerca('data',2)"/></td>
+								<td><input id="btnNext" type="button" value="Next >>" onclick="cerca('data',1)"/></td>
+							</tr>							
+						</table>
+					</form>	
+				</div>			
+			</td>
+			<td>
+				<div id="verticalSeparator"></div>
+			</td>
+			<td>
+				<div id="risultatoRicerca">
+					<table>
+						<tr>
+							<p class="istruzioni">Search results:</p>
+						</tr>
+						<tr>							
+							<td><p>First Name: </p></td>
+							<td><p id="pNome"></p></td>
+						</tr>
+						<tr>
+							<td><p>Second Name: </p></td>
+							<td><p id="pCognome"></p></td>
+						</tr>
+						<tr>
+							<td><p>Mobile: </p></td>
+							<td><p id="pCell"></p></td>
+						</tr>
+						<tr>
+							<td><p>E-Mail: </p></td>
+							<td><p id="pMail"></p></td>
+						</tr>						
+					</table>
+				</div>
+			</td>
+		</table>
+	</body>
+</html>
